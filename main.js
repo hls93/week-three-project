@@ -12,9 +12,7 @@ for (let i = 0; i < number.length; i++) {
   number[i].addEventListener("click", function(){
     //adding number to string
     displayResult += number[i].innerHTML
-    //adding number to the array
-    // displayArray.push(number[i].innerHTML)
-
+    //adding number to the input
     input.innerHTML += `${number[i].innerHTML}`
     console.log(number[i].innerHTML);
   });
@@ -24,11 +22,9 @@ for (let i = 0; i < number.length; i++) {
 for (let i = 0; i < op.length; i++) {
     //click the button
   op[i].addEventListener("click", function(){
-    //adding number to string
+    //adding operators to string
     displayResult += op[i].value
-    //adding number to the array
-    // displayArray.push(op[i].innerHTML)
-
+    //adding operators to the input
     input.innerHTML += `${op[i].innerHTML}`
     console.log(op[i].innerHTML);
   });
@@ -36,14 +32,19 @@ for (let i = 0; i < op.length; i++) {
 
 //clear event ==================================
   clear.addEventListener("click", function(){
+    //displayResult is empty, so when clicked, input button is cleared
     displayResult = "";
     console.log(clear.innerHTML);
+    //adding a clear displayResult to the input
     input.innerHTML = displayResult;
   });
 
 //equals event ================================
   equals.addEventListener("click", function(){
     console.log(equals.innerHTML);
+    //displayResult equals displayResult evaluated
+    //we add .toString to keep the numbers as a string in the input
     displayResult = eval(displayResult).toString();
+    //adding the newly evaluated displayResult to the input
     input.innerHTML = displayResult;
   });
